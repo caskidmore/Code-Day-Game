@@ -393,6 +393,11 @@
         </object-type>
         <object-type name="Sprite17" sid="926282213574368">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="8832701512493669">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7137158796260063" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\rock1.png">
@@ -434,6 +439,9 @@
                 <behavior-type name="Platform" sid="730401908853464">
                     <behavior id="Platform" />
                 </behavior-type>
+                <behavior-type name="ScrollTo" sid="8852770931214069">
+                    <behavior id="scrollto" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="25796010938278" speed="5">
@@ -447,6 +455,58 @@
                             <point x="0.5" y="1" />
                             <point x="0.4" y="0.866667" />
                             <point x="0.3" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="WalkRight" pingpong="0" repeatcount="1" repeatto="0" sid="5334060088490574" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\hero1.png">
+                        <collision-poly>
+                            <point x="0.1" y="0.0333333" />
+                            <point x="0.5" y="0" />
+                            <point x="0.9" y="0.0333333" />
+                            <point x="1" y="0.5" />
+                            <point x="0.8" y="1" />
+                            <point x="0.5" y="1" />
+                            <point x="0.2875" y="0.991667" />
+                            <point x="0.3" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\herowalk1.png">
+                        <collision-poly>
+                            <point x="0.1" y="0.0333333" />
+                            <point x="0.5" y="0" />
+                            <point x="0.9" y="0.0333333" />
+                            <point x="1" y="0.5" />
+                            <point x="1" y="1" />
+                            <point x="0.5375" y="1" />
+                            <point x="0.15" y="1" />
+                            <point x="0.3" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="WalkLeft" pingpong="0" repeatcount="1" repeatto="0" sid="7574837424641108" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\hero1.png">
+                        <collision-poly>
+                            <point x="0.7" y="0.5" />
+                            <point x="0.7" y="1" />
+                            <point x="0.5" y="1" />
+                            <point x="0.175" y="1" />
+                            <point x="0" y="0.5" />
+                            <point x="0.1" y="0.0333333" />
+                            <point x="0.5" y="0" />
+                            <point x="0.9" y="0.0333333" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\herowalk1.png">
+                        <collision-poly>
+                            <point x="0.7" y="0.5" />
+                            <point x="0.8125" y="1" />
+                            <point x="0.5" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0.5" />
+                            <point x="0.1" y="0.0333333" />
+                            <point x="0.5" y="0" />
+                            <point x="0.9" y="0.0333333" />
                         </collision-poly>
                     </frame>
                 </animation>
