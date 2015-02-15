@@ -3,27 +3,33 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="1" name="GAME_NAME3" sid="8222368142440001" static="0" type="text">V-Day Massacre (Zombies vs non-Zombies)</variable>
+        <variable constant="1" name="INSTANCE_NAME3" sid="3797333955977274" static="0" type="text">default</variable>
+        <variable constant="1" name="ROOM_NAME3" sid="4804200584611481" static="0" type="text">main</variable>
         <event-block sid="2142785321910428">
             <conditions>
                 <condition id="2" name="Key is down" sid="9794269666787074" type="Keyboard">
-                    <param id="0" name="Key">39 (Right arrow)</param>
+                    <param id="0" name="Key">68 (D)</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="4" name="Set animation" sid="7461237567966479" type="Sprite9">
+                <action id="4" name="Set animation" sid="7461237567966479" type="Peer">
                     <param id="0" name="Animation">&quot;Walking&quot;</param>
                     <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Platform" id="7" name="Simulate control" sid="8234170540072609" type="Peer">
+                    <param id="0" name="Control">1</param>
                 </action>
             </actions>
         </event-block>
         <event-block sid="5297165379818383">
             <conditions>
                 <condition id="3" name="On key released" sid="4047342676978321" type="Keyboard">
-                    <param id="0" name="Key">39 (Right arrow)</param>
+                    <param id="0" name="Key">68 (D)</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="4" name="Set animation" sid="7902421714602153" type="Sprite9">
+                <action id="4" name="Set animation" sid="7902421714602153" type="Peer">
                     <param id="0" name="Animation">&quot;Default&quot;</param>
                     <param id="1" name="From">1</param>
                 </action>
@@ -32,28 +38,878 @@
         <event-block sid="8759956606183001">
             <conditions>
                 <condition id="2" name="Key is down" sid="9149339223210547" type="Keyboard">
-                    <param id="0" name="Key">37 (Left arrow)</param>
+                    <param id="0" name="Key">65 (A)</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="4" name="Set animation" sid="7407967929817648" type="Sprite9">
+                <action id="4" name="Set animation" sid="7407967929817648" type="Peer">
                     <param id="0" name="Animation">&quot;Left&quot;</param>
                     <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Platform" id="7" name="Simulate control" sid="4740150135059066" type="Peer">
+                    <param id="0" name="Control">0</param>
                 </action>
             </actions>
         </event-block>
         <event-block sid="4273162455885058">
             <conditions>
                 <condition id="3" name="On key released" sid="7164463166760186" type="Keyboard">
-                    <param id="0" name="Key">37 (Left arrow)</param>
+                    <param id="0" name="Key">65 (A)</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="4" name="Set animation" sid="4872597857336405" type="Sprite9">
+                <action id="4" name="Set animation" sid="4872597857336405" type="Peer">
                     <param id="0" name="Animation">&quot;Default&quot;</param>
                     <param id="1" name="From">1</param>
                 </action>
             </actions>
         </event-block>
+        <event-block sid="729944256101455">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="3116609966935692" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="2862543513655963" type="Peer">
+                    <param id="0" name="Instance variable">HEALTH</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action id="-10" name="Set value" sid="2480445542084828" type="Peer">
+                    <param id="0" name="Instance variable">SCORE</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Set text" sid="7902338621339317" type="HEALTH">
+                    <param id="0" name="Text">Peer.HEALTH</param>
+                </action>
+                <action id="0" name="Set text" sid="8836963125787726" type="SCORE">
+                    <param id="0" name="Text">Peer.SCORE</param>
+                </action>
+                <action id="0" name="Play" sid="6333541850922218" type="Audio">
+                    <param id="0" name="Audio file">Level1</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">50</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9382914354730853">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="9840863294205338" type="Peer">
+                    <param id="0" name="Object">Sprite21</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="2758915343784195" type="Peer">
+                    <param id="0" name="Instance variable">HEALTH</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="0" name="Set text" sid="9330047733446198" type="HEALTH">
+                    <param id="0" name="Text">Peer.HEALTH</param>
+                </action>
+                <action id="0" name="Set text" sid="4443411478435213" type="SCORE">
+                    <param id="0" name="Text">Peer.SCORE</param>
+                </action>
+                <action id="-1" name="Set X" sid="2486938149848831" type="Peer">
+                    <param id="0" name="X">Self.X - 20</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9252049368272284">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="6514782527359229" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="2683583719955683" type="Peer">
+                    <param id="0" name="Control">2</param>
+                </action>
+                <action id="0" name="Play" sid="3357152094372598" type="Audio">
+                    <param id="0" name="Audio file">Jump</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">10</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1228064019914195">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="9045484753719159" type="Keyboard">
+                    <param id="0" name="Key">88 (X)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="8213899213643473" type="Peer">
+                    <param id="0" name="Animation">&quot;Shooting&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="1153480192722067" type="System">
+                    <param id="0" name="Seconds">0.25</param>
+                </action>
+                <action id="4" name="Set animation" sid="8615435569464503" type="Peer">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="5337969812907071" type="Peer">
+                    <param id="0" name="Object">Sprite22</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7520841997124219">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="2900569836395576" type="Sprite21">
+                    <param id="0" name="Object">Sprite22</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="6712325628153037" type="Sprite21">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="-9" name="Destroy" sid="7621203760232635" type="Sprite22" />
+                <action id="0" name="Set text" sid="3876172992091332" type="ZombieHealth">
+                    <param id="0" name="Text">Sprite21.Health</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7477145600892394">
+            <conditions>
+                <condition id="3" name="On key released" sid="8323718388198284" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="5985211872883152" type="Sprite20">
+                    <param id="0" name="Animation">&quot;DefaultLeft&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6103370308320153">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="1585025762362557" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="7503980472642" type="Sprite21">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action id="0" name="Set text" sid="8538379823482589" type="ZombieHealth">
+                    <param id="0" name="Text">Sprite21.Health</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8869735853437103">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="8963933793042811" type="Sprite21">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="414813067047145" type="Sprite21" />
+                <action id="-11" name="Add to" sid="2131425289072998" type="Peer">
+                    <param id="0" name="Instance variable">SCORE</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="0" name="Set text" sid="128372353032973" type="SCORE">
+                    <param id="0" name="Text">Peer.SCORE</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1061513472930789">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="4544600848468662" type="Peer">
+                    <param id="0" name="Instance variable">HEALTH</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="4315132557387289" type="Peer" />
+            </actions>
+        </event-block>
+        <event-group description="" disabled="1" sid="6104343188779419" title="Message Log">
+            <sub-events>
+                <event-block disabled="1" sid="2790762797781389">
+                    <conditions>
+                        <condition id="0" name="On function" sid="2306330363524321" type="Function">
+                            <param id="0" name="Name">&quot;Add Log&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Push" sid="4138339057801031" type="LogMessages">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block disabled="1" sid="6131202295376308">
+                            <conditions>
+                                <condition id="7" name="Compare size" sid="1845007790360705" type="LogMessages">
+                                    <param id="0" name="Axis">0</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">20</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Pop" sid="8803110236467349" type="LogMessages">
+                                    <param id="0" name="Where">1</param>
+                                    <param id="1" name="Axis">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="3804024218818238">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Set text" sid="1315053950903889" type="LogText">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="7076021037875304">
+                            <conditions>
+                                <condition id="3" name="For each element" sid="3110834627702591" type="LogMessages">
+                                    <param id="0" name="Axes">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="259143116700257" type="LogText">
+                                    <param id="0" name="Text">LogMessages.CurValue &amp; newline</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block disabled="1" sid="1090676145413832">
+                    <conditions>
+                        <condition id="0" name="On function" sid="9545756314314028" type="Function">
+                            <param id="0" name="Name">&quot;AddChat&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="7619440398307193" type="Function">
+                            <param id="0" name="Name">&quot;AddLog&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;&lt;&quot; &amp; Function.Param(0) &amp; &quot;&gt;&quot;  &amp; Function.Param(1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" disabled="1" sid="9733411934122027" title="Signalling">
+            <sub-events>
+                <event-block disabled="1" sid="7826999730400807">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="9960641009822324" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="15" name="Add client input value" sid="1760639429496096" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;inputs&quot;</param>
+                            <param id="1" name="Precision">3</param>
+                            <param id="2" name="Interpolation">0</param>
+                        </action>
+                        <action id="11" name="Sync object" sid="1138142691283194" type="Multiplayer">
+                            <param id="0" name="Object">Peer</param>
+                            <param id="1" name="Data">1</param>
+                            <param id="2" name="Precision">2</param>
+                            <param id="3" name="Bandwidth">0</param>
+                        </action>
+                        <action id="12" name="Sync instance variable" sid="5637105907074323" type="Multiplayer">
+                            <param id="0" name="Object">Peer</param>
+                            <param id="1" name="Instance variable">Peer|inputs</param>
+                            <param id="2" name="Precision">3</param>
+                            <param id="3" name="Interpolation">0</param>
+                            <param id="4" name="Client value tag">&quot;&quot;</param>
+                        </action>
+                        <action id="12" name="Sync instance variable" sid="3780079333221574" type="Multiplayer">
+                            <param id="0" name="Object">Peer</param>
+                            <param id="1" name="Instance variable">Peer|HEALTH</param>
+                            <param id="2" name="Precision">3</param>
+                            <param id="3" name="Interpolation">0</param>
+                            <param id="4" name="Client value tag">&quot;&quot;</param>
+                        </action>
+                        <action id="12" name="Sync instance variable" sid="4494004457611903" type="Multiplayer">
+                            <param id="0" name="Object">Peer</param>
+                            <param id="1" name="Instance variable">Peer|SCORE</param>
+                            <param id="2" name="Precision">3</param>
+                            <param id="3" name="Interpolation">0</param>
+                            <param id="4" name="Client value tag">&quot;&quot;</param>
+                        </action>
+                        <action id="1" name="Connect" sid="3462869606062323" type="Multiplayer">
+                            <param id="0" name="Server">&quot;wss://multiplayer.scirra.com&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="5460716396117592">
+                    <conditions>
+                        <condition id="2" name="On connected" sid="4873479002328548" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="8479264615054197" type="Function">
+                            <param id="0" name="Name">&quot;AddLog&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Connected, logging in...&quot;</param>
+                        </action>
+                        <action id="4" name="Log in" sid="9987853938554907" type="Multiplayer">
+                            <param id="0" name="Alias">MyUsername</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="142209782731336">
+                    <conditions>
+                        <condition id="4" name="On logged in" sid="1192611735762905" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="4654050057171427" type="Function">
+                            <param id="0" name="Name">&quot;AddLog&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;logged in with alias: &quot; &amp; Multiplayer.MyAlias &amp; &quot;(&quot; &amp; Multiplayer.MyID &amp; &quot;)&quot; &amp; newline &amp; &quot;joining room...&quot;</param>
+                        </action>
+                        <action id="5" name="Join room" sid="1351433724163323" type="Multiplayer">
+                            <param id="0" name="Game">GAME_NAME3</param>
+                            <param id="1" name="Instance">INSTANCE_NAME3</param>
+                            <param id="2" name="Room">ROOM_NAME3</param>
+                            <param id="3" name="Max peers">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="8493332768564376">
+                    <conditions>
+                        <condition id="5" name="On joined room" sid="4386829765595505" type="Multiplayer" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="4720301036982592">
+                            <conditions>
+                                <condition id="10" name="Is host" sid="1505213879000254" type="Multiplayer" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="4674445980573017" type="Function">
+                                    <param id="0" name="Name">&quot;AddLog&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;join room as host&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="8774230501982038" type="System">
+                                    <param id="0" name="Group name">&quot;Host&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="4727358356502653" type="Peer">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Value">Multiplayer.MyID</param>
+                                </action>
+                                <action id="13" name="Associate object with peer" sid="4081157635860355" type="Multiplayer">
+                                    <param id="0" name="Object">Peer</param>
+                                    <param id="1" name="Peer ID">Multiplayer.MyID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="1801177727476918">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="6117012545137298" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="9089725660257164" type="Function">
+                                    <param id="0" name="Name">&quot;AddLog&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;joined room as peer&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="7746866862401583" type="System">
+                                    <param id="0" name="Group name">&quot;Peer&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="9323790450420739" type="Function">
+                                    <param id="0" name="Name">&quot;AddLog&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Attempting to establish connection to host&quot;</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="9081884907083747" type="Peer" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block disabled="1" sid="2872671731347217">
+                    <conditions>
+                        <condition id="3" name="On disconnected" sid="8484324746835858" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="1631320486685452" type="Function">
+                            <param id="0" name="Name">&quot;AddLog&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Signalling disconnected&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="2031507414776017">
+                    <conditions>
+                        <condition id="1" name="On error" sid="4111683910407778" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="7348611583074531" type="Function">
+                            <param id="0" name="Name">&quot;AddLog&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Signalling error; &quot;&amp; Multiplayer.ErrorMessage</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="8858772468339876">
+                    <conditions>
+                        <condition id="6" name="On left room" sid="8575750919927845" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="2671091651477355" type="Function">
+                            <param id="0" name="Name">&quot;AddLog&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Signalling; left room&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="2371703372410458">
+                    <conditions>
+                        <condition id="14" name="On kicked" sid="8879278023435551" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="2179433828910501" type="Function">
+                            <param id="0" name="Name">&quot;AddLog&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Kicked (either could not connect to host host quit&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="60935854107165">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="726361641812503" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="8682049560191263" type="NetStats">
+                            <param id="0" name="Text">Multiplayer.PeerCount &amp; &quot; peers connected&quot; &amp; newline &amp; Multiplayer.StatInboundCount &amp; &quot; in (&quot; &amp; (round(Multiplayer.StatInboundBandwidth/100)/10) &amp; &quot; k) / sec&quot; &amp; newline &amp; Multiplayer.StatOutboundCount &amp; &quot; out (&quot; &amp; (round(Multiplayer.StatOutboundBandwidth/100)/10) &amp; &quot; k) / sec&quot; &amp; newline &amp; &quot;Host ping &quot; &amp; round(Multiplayer.PeerLatency(Multiplayer.HostID)) &amp; &quot;, PDV &quot; &amp; round(Multiplayer.PeerPDV(Multiplayer.HostID))</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" disabled="1" sid="4604006650234016" title="Game">
+            <sub-events>
+                <event-group description="" disabled="1" sid="4730718192810254" title="Peer">
+                    <sub-events>
+                        <event-block disabled="1" sid="4576802429113213">
+                            <conditions>
+                                <condition id="-18" name="On created" sid="6527757213379041" type="Peer" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="1879344753279897" type="Peer">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Value">Multiplayer.PeerID</param>
+                                </action>
+                                <action id="13" name="Associate object with peer" sid="6986107656981775" type="Multiplayer">
+                                    <param id="0" name="Object">Peer</param>
+                                    <param id="1" name="Peer ID">Multiplayer.PeerID</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>If the peer that is created represents the local player, enable local input prediction for it. This means instead of being locked to whatever position it is on the host, it can start to move around. However as it moves it will correct its position if it starts to deviate from where it is on the host, so it&apos;s important both the peer and the host move it in exactly the same way.</comment>
+                                <event-block disabled="1" sid="8352749070361276">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="9326049788762526" type="Peer">
+                                            <param id="0" name="Instance variable">peerid</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Multiplayer.MyID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="16" name="Enable local input prediction" sid="5059344416107109" type="Multiplayer">
+                                            <param id="0" name="Object">Peer</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block disabled="1" sid="2446223849790289">
+                            <conditions>
+                                <condition id="17" name="On client update" sid="4008962490167164" type="Multiplayer" />
+                                <condition id="-7" name="Compare instance variable" sid="3338014241904338" type="Peer">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Multiplayer.MyID</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>For each of the five controls, update the corresponding bit in &apos;inputs&apos; to 1 for pressed or 0 for not pressed.</comment>
+                                <event-block any="1" disabled="1" sid="8297149207365495">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="2775799201796989" type="Keyboard">
+                                            <param id="0" name="Key">37 (Left arrow)</param>
+                                        </condition>
+                                        <condition id="2" name="Key is down" sid="3410786310643365" type="Keyboard">
+                                            <param id="0" name="Key">65 (A)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="8023174946590402" type="Peer">
+                                            <param id="0" name="Instance variable">inputs</param>
+                                            <param id="1" name="Value">setbit(Self.inputs, 0, 1)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="9251939350774802">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="4493596238165786" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="8047513427506557" type="Peer">
+                                            <param id="0" name="Instance variable">inputs</param>
+                                            <param id="1" name="Value">setbit(Self.inputs, 0, 0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block any="1" disabled="1" sid="5994418916121676">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="7309789713244783" type="Keyboard">
+                                            <param id="0" name="Key">38 (Up arrow)</param>
+                                        </condition>
+                                        <condition id="2" name="Key is down" sid="618310917535815" type="Keyboard">
+                                            <param id="0" name="Key">87 (W)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="9547334112680036" type="Peer">
+                                            <param id="0" name="Instance variable">inputs</param>
+                                            <param id="1" name="Value">setbit(Self.inputs, 1, 1)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="4180229663476169">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="9862967483565048" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="485002514640559" type="Peer">
+                                            <param id="0" name="Instance variable">inputs</param>
+                                            <param id="1" name="Value">setbit(Self.inputs, 1, 0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block any="1" disabled="1" sid="825487913600342">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="1370761298656845" type="Keyboard">
+                                            <param id="0" name="Key">39 (Right arrow)</param>
+                                        </condition>
+                                        <condition id="2" name="Key is down" sid="1972335361312944" type="Keyboard">
+                                            <param id="0" name="Key">68 (D)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="8551321548852749" type="Peer">
+                                            <param id="0" name="Instance variable">inputs</param>
+                                            <param id="1" name="Value">setbit(Self.inputs, 2, 1)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="8224067689825233">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="1688826216225705" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="7218692246906386" type="Peer">
+                                            <param id="0" name="Instance variable">inputs</param>
+                                            <param id="1" name="Value">setbit(Self.inputs, 2, 0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block any="1" disabled="1" sid="1705786651357384">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="1762570089062074" type="Keyboard">
+                                            <param id="0" name="Key">40 (Down arrow)</param>
+                                        </condition>
+                                        <condition id="2" name="Key is down" sid="3599101235422801" type="Keyboard">
+                                            <param id="0" name="Key">83 (S)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="726042901995781" type="Peer">
+                                            <param id="0" name="Instance variable">inputs</param>
+                                            <param id="1" name="Value">setbit(Self.inputs, 3, 1)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="4718114122835688">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="6173734922545012" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="689878597009964" type="Peer">
+                                            <param id="0" name="Instance variable">inputs</param>
+                                            <param id="1" name="Value">setbit(Self.inputs, 3, 0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="6776884698491806">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="3452241530109387" type="Keyboard">
+                                            <param id="0" name="Key">88 (X)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="9471376092798049" type="Peer">
+                                            <param id="0" name="Instance variable">inputs</param>
+                                            <param id="1" name="Value">setbit(Self.inputs, 4, 1)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="9707553006972073">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="908925721029237" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="792419829779937" type="Peer">
+                                            <param id="0" name="Instance variable">inputs</param>
+                                            <param id="1" name="Value">setbit(Self.inputs, 4, 0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>After we&apos;ve updated all the bits in the instance variable, set the client input state to the resulting value.</comment>
+                                <event-block disabled="1" sid="2145374091887328">
+                                    <conditions />
+                                    <actions>
+                                        <action id="14" name="Set client state" sid="181996797639342" type="Multiplayer">
+                                            <param id="0" name="Tag">&quot;inputs&quot;</param>
+                                            <param id="1" name="Value">Peer.inputs</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="5776531326268029">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="4953597794413411" type="Peer">
+                                            <param id="0" name="Instance variable">peerid</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Multiplayer.MyID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <comment>Note an important detail is that we rely on the bits in the &apos;inputs&apos; variable, updated by the above event, to know which controls are being pressed. We do not test actual mouse or keyboard input here. The reason for this is that the input states are by default only sent to the host 30 times a second, whereas the game typically runs at 60 FPS, so inputs are only sent about every other frame. If we tested for input directly in this event, then we might not actually send that input to the host until the next frame. This would mean locally we move the peer one more frame than the host will have, which will make the player deviate slightly more from the host and cause more input prediction error. By only moving the player with controls we know we&apos;ve already sent to the host the player is more likely to stay in sync.</comment>
+                                        <event-block disabled="1" sid="6399170828633112">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="402632797472134" type="System">
+                                                    <param id="0" name="First value">getbit(Peer.inputs, 0)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="182543925856497" type="Peer">
+                                                    <param id="0" name="Control">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block disabled="1" sid="2888127636479084">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="8506877015880408" type="System">
+                                                    <param id="0" name="First value">getbit(Peer.inputs, 1)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="9293204454783532" type="Peer">
+                                                    <param id="0" name="Control">2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block disabled="1" sid="9575768124832587">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="774258936236118" type="System">
+                                                    <param id="0" name="First value">getbit(Peer.inputs, 2)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="2368649503419267" type="Peer">
+                                                    <param id="0" name="Control">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block disabled="1" sid="1397863886952993">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="975230458670766" type="System">
+                                                    <param id="0" name="First value">getbit(Peer.inputs, 3)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" disabled="1" sid="8422313123091082" title="Host">
+                    <sub-events>
+                        <event-block disabled="1" sid="8035622324974102">
+                            <conditions>
+                                <condition id="11" name="On peer connected" sid="6351692527471208" type="Multiplayer" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="9740237012433268" type="System">
+                                    <param id="0" name="Object to create">Peer</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">25</param>
+                                    <param id="3" name="Y">465</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="9611268625120374" type="Peer">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Value">Multiplayer.PeerID</param>
+                                </action>
+                                <action id="13" name="Associate object with peer" sid="5284458995496801" type="Multiplayer">
+                                    <param id="0" name="Object">Peer</param>
+                                    <param id="1" name="Peer ID">Multiplayer.PeerID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="5015460293569105">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3723424188655667" type="Peer">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Multiplayer.MyID</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" disabled="1" sid="8123162730870132">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="314159203801667" type="Keyboard">
+                                            <param id="0" name="Key">37 (Left arrow)</param>
+                                        </condition>
+                                        <condition id="2" name="Key is down" sid="6567838211291488" type="Keyboard">
+                                            <param id="0" name="Key">65 (A)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="2330123380314326" type="Peer">
+                                            <param id="0" name="Control">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block any="1" disabled="1" sid="2649812972104384">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="8026996701437288" type="Keyboard">
+                                            <param id="0" name="Key">38 (Up arrow)</param>
+                                        </condition>
+                                        <condition id="2" name="Key is down" sid="6831401544831227" type="Keyboard">
+                                            <param id="0" name="Key">87 (W)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="494768188161254" type="Peer">
+                                            <param id="0" name="Control">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block any="1" disabled="1" sid="4626441079119799">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="897843539291146" type="Keyboard">
+                                            <param id="0" name="Key">39 (Right arrow)</param>
+                                        </condition>
+                                        <condition id="2" name="Key is down" sid="5813307017757901" type="Keyboard">
+                                            <param id="0" name="Key">68 (D)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="5183716463597407" type="Peer">
+                                            <param id="0" name="Control">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Note when shooting we still update the same bit in the &apos;inputs&apos; variable that the peers do. This is solely so the common events can treat all objects the same when it comes to shooting: the laser is shown if the bit is set, otherwise it is hidden.</comment>
+                                <event-block disabled="1" sid="1872498669376542">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="2947451135578381" type="Keyboard">
+                                            <param id="0" name="Key">88 (X)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="3899993880266671" type="Peer">
+                                            <param id="0" name="Instance variable">inputs</param>
+                                            <param id="1" name="Value">setbit(self.inputs, 4, 1)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="1664121506263703">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="5211201990393378" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="7425827387825443" type="Peer">
+                                            <param id="0" name="Instance variable">inputs</param>
+                                            <param id="1" name="Value">setbit(self.inputs, 4, 0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block disabled="1" sid="749858304094743">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="2508403540337641" type="Peer">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">Multiplayer.MyID</param>
+                                </condition>
+                                <condition id="-11" name="For Each" sid="9181185057088265" type="System">
+                                    <param id="0" name="Object">Peer</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="2873713306764377" type="Peer">
+                                    <param id="0" name="Instance variable">inputs</param>
+                                    <param id="1" name="Value">Multiplayer.PeerState(peer.peerid, &quot;inputs&quot;)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block disabled="1" sid="9898797894692382">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="3514519562956422" type="System">
+                                            <param id="0" name="First value">getbit(Peer.inputs, 0)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="6891378670696026" type="Peer">
+                                            <param id="0" name="Control">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="7755916419505012">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="8167238693747792" type="System">
+                                            <param id="0" name="First value">getbit(Peer.inputs, 1)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="9526581730116098" type="Peer">
+                                            <param id="0" name="Control">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="6185524872699283">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="1428297857538346" type="System">
+                                            <param id="0" name="First value">getbit(Peer.inputs, 2)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="3433122676051884" type="Peer">
+                                            <param id="0" name="Control">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

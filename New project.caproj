@@ -10,12 +10,20 @@
     <unique-id>282j55f2xvkq9</unique-id>
     <saved-with-version>19500</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Multiplayer" version="1">Multiplayer</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -180,7 +188,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Sprite7" sid="6677225234668965">
+        <object-type name="Door" sid="6677225234668965">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8765040736938303" speed="5">
@@ -204,8 +212,15 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Sprite9" sid="6539097970272921">
+        <object-type name="Peer" sid="6539097970272921">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="HEALTH" sid="6375051221353332" type="number" />
+                <instance-variable name="SCORE" sid="3317684516457641" type="number" />
+                <instance-variable name="inputs" sid="987148903977915" type="number" />
+                <instance-variable name="peerid" sid="5411125565058408" type="string" />
+                <instance-variable name="FirstShot" sid="4741629996584647" type="boolean" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="6956942586175757">
                     <behavior id="Platform" />
@@ -216,10 +231,13 @@
                 <behavior-type name="ScrollTo" sid="1082784310345764">
                     <behavior id="scrollto" />
                 </behavior-type>
+                <behavior-type name="8Direction" sid="6023460650253293">
+                    <behavior id="EightDir" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6971299316132747" speed="5">
-                    <frame duration="1" hotspotX="0.6" hotspotY="0.933333" original-source="Z:\Documents\CodeDay2015\Code-Day-Game\Media\hero1.png">
+                    <frame duration="1" hotspotX="1.1" hotspotY="0.5" original-source="Z:\Documents\CodeDay2015\Code-Day-Game\Media\hero1.png">
                         <collision-poly>
                             <point x="0.1" y="0.0333333" />
                             <point x="0.5" y="0" />
@@ -233,7 +251,7 @@
                     </frame>
                 </animation>
                 <animation framecount="2" loop="1" name="Walking" pingpong="0" repeatcount="1" repeatto="0" sid="1883542204113933" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="Z:\Documents\CodeDay2015\Code-Day-Game\Media\hero1.png">
+                    <frame duration="1" hotspotX="1.2" hotspotY="0.5" original-source="Z:\Documents\CodeDay2015\Code-Day-Game\Media\hero1.png">
                         <collision-poly>
                             <point x="0.1" y="0.0333333" />
                             <point x="0.5" y="0" />
@@ -245,7 +263,7 @@
                             <point x="0.3" y="0.5" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="Z:\Documents\CodeDay2015\Code-Day-Game\Media\herowalk1.png">
+                    <frame duration="1" hotspotX="1.2" hotspotY="0.5" original-source="Z:\Documents\CodeDay2015\Code-Day-Game\Media\herowalk1.png">
                         <collision-poly>
                             <point x="0.1" y="0.0333333" />
                             <point x="0.5" y="0" />
@@ -259,7 +277,7 @@
                     </frame>
                 </animation>
                 <animation framecount="2" loop="0" name="Left" pingpong="0" repeatcount="1" repeatto="0" sid="409438795265566" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="Z:\Documents\CodeDay2015\Code-Day-Game\Media\hero1.png">
+                    <frame duration="1" hotspotX="-0.3" hotspotY="0.5" original-source="Z:\Documents\CodeDay2015\Code-Day-Game\Media\hero1.png">
                         <collision-poly>
                             <point x="0.7" y="0.5" />
                             <point x="0.85" y="1" />
@@ -277,6 +295,34 @@
                             <point x="0.775" y="1" />
                             <point x="0.4625" y="1" />
                             <point x="0.15" y="1" />
+                            <point x="0" y="0.5" />
+                            <point x="0.1" y="0.0333333" />
+                            <point x="0.5" y="0" />
+                            <point x="0.9" y="0.0333333" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Shooting" pingpong="0" repeatcount="1" repeatto="0" sid="8151140726298798" speed="5">
+                    <frame duration="1" hotspotX="0.85" hotspotY="0.533333" original-source="E:\shootingbowhero1.png">
+                        <collision-poly>
+                            <point x="0.05" y="0.0333333" />
+                            <point x="0.425" y="0.0416666" />
+                            <point x="0.6" y="0.266667" />
+                            <point x="0.8" y="0.5" />
+                            <point x="0.65" y="0.766667" />
+                            <point x="0.3875" y="0.995833" />
+                            <point x="0.2" y="0.983333" />
+                            <point x="0.15" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="DefaultLeft" pingpong="0" repeatcount="1" repeatto="0" sid="3259733834676429" speed="5">
+                    <frame duration="1" hotspotX="-0.6" hotspotY="0.5" original-source="C:\Users\Jack McKenna\Desktop\GitHub\Code-Day-Game\Media\hero1.png">
+                        <collision-poly>
+                            <point x="0.7" y="0.5" />
+                            <point x="0.7" y="1" />
+                            <point x="0.5" y="1" />
+                            <point x="0.1625" y="0.995833" />
                             <point x="0" y="0.5" />
                             <point x="0.1" y="0.0333333" />
                             <point x="0.5" y="0" />
@@ -512,21 +558,176 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="HealthBlock" sid="9390015561942558">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Text2" sid="1817554535177488">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Sprite21" sid="3729935845765901">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Health of zombie" name="Health" sid="1588903616369636" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Solid" sid="4213140508424722">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1452172447418049" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="Z:\Documents\CodeDay2015\Code-Day-Game\Media\zombie1.png">
+                        <collision-poly>
+                            <point x="0.7125" y="0.379167" />
+                            <point x="0.75" y="0.65" />
+                            <point x="0.55" y="1" />
+                            <point x="0.3375" y="0.683333" />
+                            <point x="0.3" y="0.416667" />
+                            <point x="0.0125" y="0.129167" />
+                            <point x="0.5" y="0" />
+                            <point x="1" y="0.1625" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="HEALTH" sid="3869479922013636">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="SCORE" sid="6987182179290385">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="level1" sid="984260856427018">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="level2" sid="9939436844273585">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="level3" sid="4829054619736769">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="instructions" sid="2945607697631647">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="story" sid="8793056394732057">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Sprite22" sid="950406282265232">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="4445548317252324">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="8185750314443581">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9299597405081529" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.6" original-source="C:\Users\Jack McKenna\Desktop\GitHub\Code-Day-Game\Media\arrow1.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.4875" y="0" />
+                            <point x="1" y="0.0125" />
+                            <point x="1" y="1" />
+                            <point x="0.7375" y="1" />
+                            <point x="0.475" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0.4" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Function" sid="6756089529033226">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="ZombieHealth" sid="452798159413815">
+            <plugin id="Text" />
+        </object-type>
+        <object-type global="1" name="LogMessages" sid="644019024467029">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="LogText" sid="7870561751645737">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="NameTextBox" sid="7687664963812097">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="JoinButton" sid="6270710790917707">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="ViewTutorial" sid="6788870801376271">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Title" sid="4831028881077635">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="FormLabel" sid="285944920900941">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="NetStats" sid="1118265512307328">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Sprite9" sid="7629677622228379">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="8662594989247034">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3383505574690095" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Audio" sid="6320032089804425">
+            <plugin id="Audio" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Layout 1.xml</layout>
-        <layout>Layout 2.xml</layout>
+        <layout>Level 2.xml</layout>
+        <layout>menu.xml</layout>
+        <layout>instructions.xml</layout>
+        <layout>story.xml</layout>
+        <layout>Level 1.xml</layout>
+        <layout>Login.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
         <event-sheet>Event sheet 2.xml</event-sheet>
+        <event-sheet>Event sheet 3.xml</event-sheet>
+        <event-sheet>Event sheet 4.xml</event-sheet>
+        <event-sheet>Login Events.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Multiplayer" uid="2" />
         <global-instance type="Keyboard" uid="39" />
+        <global-instance type="Function" uid="144" />
+        <global-instance type="Audio" uid="153">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+                <speed-of-sound>5000</speed-of-sound>
+                <doppler-factor>1</doppler-factor>
+            </properties>
+        </global-instance>
     </global-instances>
-    <sounds-folder />
+    <sounds-folder>
+        <file name="Level1.ogg" />
+        <file name="Jump.ogg" />
+    </sounds-folder>
     <music-folder />
     <files-folder>
         <file-folder name="Icons">

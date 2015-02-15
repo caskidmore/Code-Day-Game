@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 3</name>
+    <events>
+        <event-block sid="9274779417049529">
+            <conditions>
+                <condition id="0" name="On clicked" sid="6271448790342016" type="instructions" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="3011001438619376" type="System">
+                    <param id="0" name="Layout">instructions</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7410810778507689">
+            <conditions>
+                <condition id="0" name="On clicked" sid="2180322442926683" type="story" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="3776799219455791" type="System">
+                    <param id="0" name="Layout">story</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="669348738035029">
+            <conditions>
+                <condition id="0" name="On clicked" sid="1106478064277517" type="level1" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="4025849512156025" type="System">
+                    <param id="0" name="Layout">Layout 1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7912960854039516">
+            <conditions>
+                <condition id="0" name="On clicked" sid="8004361713927061" type="level2" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="2461979301460091" type="System">
+                    <param id="0" name="Layout">Level 2</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
