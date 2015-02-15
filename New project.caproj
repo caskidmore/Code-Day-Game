@@ -188,7 +188,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Door" sid="6677225234668965">
+        <object-type name="DoorHUman" sid="6677225234668965">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8765040736938303" speed="5">
@@ -575,7 +575,7 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1452172447418049" speed="5">
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1452172447418049" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="Z:\Documents\CodeDay2015\Code-Day-Game\Media\zombie1.png">
                         <collision-poly>
                             <point x="0.7125" y="0.379167" />
@@ -586,6 +586,18 @@
                             <point x="0.0125" y="0.129167" />
                             <point x="0.5" y="0" />
                             <point x="1" y="0.1625" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack McKenna\Desktop\GitHub\Code-Day-Game\Media\zombiewalk1.png">
+                        <collision-poly>
+                            <point x="0.7" y="0.5" />
+                            <point x="0.8" y="0.933333" />
+                            <point x="0.5" y="0.833333" />
+                            <point x="0.2" y="0.933333" />
+                            <point x="0" y="0.5" />
+                            <point x="0.1" y="0.0333333" />
+                            <point x="0.5" y="0" />
+                            <point x="0.9" y="0.0333333" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -685,6 +697,87 @@
         <object-type name="Audio" sid="6320032089804425">
             <plugin id="Audio" />
         </object-type>
+        <object-type name="DoorZ" sid="4483495580825133">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5120552866619916" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack McKenna\Desktop\GitHub\Code-Day-Game\Media\spawndoor1.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="StoryBoardImage" sid="2417278084802698">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Platform" sid="938971150921572">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="1092713447605578">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2325265576524391" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack McKenna\Desktop\GitHub\Code-Day-Game\Media\storibord1.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="StoryBoardCenter" sid="8586821536797004">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="ScrollTo" sid="423880387084286">
+                    <behavior id="scrollto" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7489607498859533" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite7" sid="9007964454108384">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="ScrollTo" sid="2354475336774165">
+                    <behavior id="scrollto" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9637148672359016" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite23" sid="3323398781419549">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="8879631840293713">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6832932043559655" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground13" sid="5397832273522371">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Text" sid="1619604946859563">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Sprite24" sid="9723133137961563">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="152600080516548" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="WinText" sid="53341301394789">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -700,7 +793,7 @@
         <event-sheet>Event sheet 1.xml</event-sheet>
         <event-sheet>Event sheet 2.xml</event-sheet>
         <event-sheet>Event sheet 3.xml</event-sheet>
-        <event-sheet>Event sheet 4.xml</event-sheet>
+        <event-sheet>StorySheet.xml</event-sheet>
         <event-sheet>Login Events.xml</event-sheet>
     </event-folder>
     <global-instances>

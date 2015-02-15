@@ -89,6 +89,9 @@
                     <param id="3" name="Volume">50</param>
                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                 </action>
+                <action id="-15" name="Set visible" sid="3846653987914924" type="WinText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="9382914354730853">
@@ -165,7 +168,7 @@
             <actions>
                 <action id="-12" name="Subtract from" sid="6712325628153037" type="Sprite21">
                     <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Value">5</param>
+                    <param id="1" name="Value">20</param>
                 </action>
                 <action id="-9" name="Destroy" sid="7621203760232635" type="Sprite22" />
                 <action id="0" name="Set text" sid="3876172992091332" type="ZombieHealth">
@@ -229,6 +232,10 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="4315132557387289" type="Peer" />
+                <action id="-2" name="Go to layout" sid="3556477807786766" type="System">
+                    <param id="0" name="Layout">menu</param>
+                </action>
+                <action id="33" name="Stop all" sid="7039029113477102" type="Audio" />
             </actions>
         </event-block>
         <event-group description="" disabled="1" sid="6104343188779419" title="Message Log">
@@ -911,5 +918,43 @@
                 </event-group>
             </sub-events>
         </event-group>
+        <event-block sid="9010628151579498">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="3187067222202607" type="System" />
+            </conditions>
+            <actions>
+                <action id="-23" name="Move at angle" sid="8201600124355675" type="Sprite21">
+                    <param id="0" name="Angle">180</param>
+                    <param id="1" name="Distance">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="361912759581536">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="1321882248462196" type="System">
+                    <param id="0" name="Interval (seconds)">random(3,7)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="8603801625462174" type="DoorZ">
+                    <param id="0" name="Object">Sprite21</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6417579935692858">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="4267304942381636" type="DoorZ">
+                    <param id="0" name="Object">Peer</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="7672178365709432" type="DoorZ" />
+                <action id="-15" name="Set visible" sid="7250315681640727" type="WinText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
