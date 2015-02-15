@@ -315,13 +315,212 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Sprite11" sid="8557902492778368">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8445875015041757" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\bkgrnd1.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground11" sid="5700218986699027">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="1558193376298635">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\sand.png" />
+        </object-type>
+        <object-type name="Sprite12" sid="5142532050061043">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5681895174127901" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\coral underpart.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground12" sid="9540060821682437">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\coral underpart.png" />
+        </object-type>
+        <object-type name="Sprite13" sid="9341093099727269">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6896869435126325" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\coraloverpart.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite14" sid="6130231839707966">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="1589821065053107">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9720084561331058" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\coral over part.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite15" sid="1074076453528709">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5626682330363678" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite16" sid="1141004498900514">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2128549313289804" speed="5">
+                    <frame duration="1" hotspotX="0.533333" hotspotY="0.514286" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\seaweed.png">
+                        <collision-poly>
+                            <point x="0.0666667" y="0.0285714" />
+                            <point x="0.466667" y="0" />
+                            <point x="0.933333" y="0.0285714" />
+                            <point x="0.933333" y="0.485714" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0.133333" y="0.485714" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite17" sid="926282213574368">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="8832701512493669">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7137158796260063" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\rock1.png">
+                        <collision-poly>
+                            <point x="0.4" y="0.4" />
+                            <point x="0.5" y="0.3" />
+                            <point x="0.6" y="0.4" />
+                            <point x="0.9" y="0.5" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0.2" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite18" sid="1693946556614274">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9610204481101978" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite19" sid="6346000261168256">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9470759307411804" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\spawndoor1.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite20" sid="8549002397694717">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="6156848039396636">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Platform" sid="730401908853464">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="ScrollTo" sid="8852770931214069">
+                    <behavior id="scrollto" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="25796010938278" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\hero1.png">
+                        <collision-poly>
+                            <point x="0.1" y="0.0333333" />
+                            <point x="0.5" y="0" />
+                            <point x="0.9" y="0.0333333" />
+                            <point x="1" y="0.5" />
+                            <point x="0.6" y="0.866667" />
+                            <point x="0.5" y="1" />
+                            <point x="0.4" y="0.866667" />
+                            <point x="0.3" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="WalkRight" pingpong="0" repeatcount="1" repeatto="0" sid="5334060088490574" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\hero1.png">
+                        <collision-poly>
+                            <point x="0.1" y="0.0333333" />
+                            <point x="0.5" y="0" />
+                            <point x="0.9" y="0.0333333" />
+                            <point x="1" y="0.5" />
+                            <point x="0.8" y="1" />
+                            <point x="0.5" y="1" />
+                            <point x="0.2875" y="0.991667" />
+                            <point x="0.3" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\herowalk1.png">
+                        <collision-poly>
+                            <point x="0.1" y="0.0333333" />
+                            <point x="0.5" y="0" />
+                            <point x="0.9" y="0.0333333" />
+                            <point x="1" y="0.5" />
+                            <point x="1" y="1" />
+                            <point x="0.5375" y="1" />
+                            <point x="0.15" y="1" />
+                            <point x="0.3" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="WalkLeft" pingpong="0" repeatcount="1" repeatto="0" sid="7574837424641108" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\hero1.png">
+                        <collision-poly>
+                            <point x="0.7" y="0.5" />
+                            <point x="0.7" y="1" />
+                            <point x="0.5" y="1" />
+                            <point x="0.175" y="1" />
+                            <point x="0" y="0.5" />
+                            <point x="0.1" y="0.0333333" />
+                            <point x="0.5" y="0" />
+                            <point x="0.9" y="0.0333333" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\herowalk1.png">
+                        <collision-poly>
+                            <point x="0.7" y="0.5" />
+                            <point x="0.8125" y="1" />
+                            <point x="0.5" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0.5" />
+                            <point x="0.1" y="0.0333333" />
+                            <point x="0.5" y="0" />
+                            <point x="0.9" y="0.0333333" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Layout 1.xml</layout>
+        <layout>Layout 2.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Event sheet 2.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Multiplayer" uid="2" />
