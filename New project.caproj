@@ -325,6 +325,11 @@
         </object-type>
         <object-type name="TiledBackground11" sid="5700218986699027">
             <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="1558193376298635">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
             <texture original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\sand.png" />
         </object-type>
         <object-type name="Sprite12" sid="5142532050061043">
@@ -349,6 +354,11 @@
         </object-type>
         <object-type name="Sprite14" sid="6130231839707966">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="1589821065053107">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9720084561331058" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\coral over part.png" />
@@ -404,6 +414,41 @@
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9610204481101978" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite19" sid="6346000261168256">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9470759307411804" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\spawndoor1.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite20" sid="8549002397694717">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="6156848039396636">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Platform" sid="730401908853464">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="25796010938278" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jack\Documents\GitHub\Code-Day-Game\Media\hero1.png">
+                        <collision-poly>
+                            <point x="0.1" y="0.0333333" />
+                            <point x="0.5" y="0" />
+                            <point x="0.9" y="0.0333333" />
+                            <point x="1" y="0.5" />
+                            <point x="0.6" y="0.866667" />
+                            <point x="0.5" y="1" />
+                            <point x="0.4" y="0.866667" />
+                            <point x="0.3" y="0.5" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
